@@ -1,0 +1,6 @@
+応募者情報
+氏名：{{ user_name }}
+年齢：{{ user_age }}
+性別：{{ user_gender }}
+メールアドレス：{{ user_email }}
+電話番号：{{ user_tel }}

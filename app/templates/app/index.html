@@ -1,0 +1,31 @@
+
+{% extends 'app/base.html' %}
+
+    {% block content %}
+        {% for recruit in recruit_list %}
+           <table>
+               <tr>
+                   <th class="th_first">時給</th>
+                   <td class="td_first">{{ recruit.hourlywage }}円 　 ※{{ recruit.hourlywage_description }}</td>
+               </tr>
+               <tr>
+                   <th>勤務時間</th>
+                   <td>{{ recruit.worktime }}</td>
+               </tr>
+               <tr>
+                   <th class="th_last">その他</th>
+                   <td class="td_last">{{ recruit.description }}</td>
+               </tr>
+           </table>
+           
+           <a href="{% url 'detail' slug recruit.pk %}">詳細</a>
+        {% endfor %}
+    {% endblock %}
+
+
+    {{ recruit.hourlywage }}
+    {{ recruit.hourlywage_description }}
+    {{ recruit.worktime }}
+    {{ recruit.worktime_description }}
+    {{ recruit.description }}
+    
