@@ -2,3 +2,6 @@ Django~=2.2.10
 django-widget-tweaks
 whitenoise
 gunicorn
+dj-database-url
+python-dotenv
+psycopg2-binary
