@@ -78,9 +78,13 @@ WSGI_APPLICATION = 'bosyuusite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'd5pesicteadja8',
+    'USER': 'cfzsdrhimcdlfd',
+    'PASSWORD': '09318d09025ace9ac8a5b0b99d2878973106352c2d5cc118f7107fec1874ffcc',
+    'HOST': 'ec2-44-195-240-222.compute-1.amazonaws.com',
+    'PORT': 5432,
+  }
 }
 
 
