@@ -69,7 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bosyuusite.wsgi.application'
 
-
+DEBUG = False
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -93,7 +93,6 @@ EMAIL_HOST = os.environ['EMAIL_HOST']
 EMAIL_PORT = os.environ['EMAIL_PORT']
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
-DEBUG = os.environ['DEBUG']
 ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
