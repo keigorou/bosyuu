@@ -4,7 +4,7 @@
 <table>
     <tr>
         <th class="th_first">時給</th>
-        <td class="td_first">{{ recruit.hourlywage }}円 　 ※{{ recruit.hourlywage_description }}</td>
+        <td class="td_first">{{ recruit.hourlywage }}円 　 {{ recruit.hourlywage_description }}</td>
     </tr>
     <tr>
         <th>勤務時間</th>
@@ -83,7 +83,7 @@
                 {% render_field form.user_tel class="form-control" placeholder='例：09010001000' %}
             </div>
            
-            <button type="submit" class="btn btn-info">応募する</button>
+            <button type="submit" class="btn btn-info to-apply">応募する</button>
             
         </form>
     </div>

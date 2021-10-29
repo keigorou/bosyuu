@@ -2,11 +2,19 @@
 {% extends 'app/base.html' %}
 
     {% block content %}
+    <div class="header">
+        {{ store_name }}
+    </div>
         {% for recruit in recruit_list %}
+        <h4>募集要項</h4>
            <table>
                <tr>
                    <th class="th_first">時給</th>
-                   <td class="td_first">{{ recruit.hourlywage }}円 　 ※{{ recruit.hourlywage_description }}</td>
+                   <td class="td_first">{{ recruit.hourlywage }}円 　 {{ recruit.hourlywage_description }}</td>
+               </tr>
+               <tr>
+                   <th>時給</th>
+                   <td>{{ recruit.hourlywage }}円 　 {{ recruit.hourlywage_description }}</td>
                </tr>
                <tr>
                    <th>勤務時間</th>
@@ -17,8 +25,7 @@
                    <td class="td_last">{{ recruit.description　| linebreaksbr }}</td>
                </tr>
            </table>
-           
-           <a href="{% url 'detail' slug recruit.pk %}">詳細</a>
+           <button class="btn btn-outline-info to-detail"  type="button" onclick=location.href="{% url 'detail' slug recruit.pk %}" >応募画面へ</button>
         {% endfor %}
     {% endblock %}
 

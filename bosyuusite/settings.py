@@ -20,12 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '==301(6c9(p&d8u@#2jd7lql*6&s@yoat*8_j97is66%69fkvv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -91,7 +88,13 @@ load_dotenv(find_dotenv())
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600),
     }
-
+SECRET_KEY = os.environ['SECRET_KEY']
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_PORT = os.environ['EMAIL_PORT']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+DEBUG = os.environ['DEBUG']
+ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -136,8 +139,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'keigorou84@gmail.com'
-EMAIL_HOST_PASSWORD = 'kpdabkkvhpaxxasu'
+
 EMAIL_USE_TLS = True

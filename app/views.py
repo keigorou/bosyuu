@@ -20,6 +20,7 @@ class IndexView(View):
 
         return render(request, 'app/index.html', {
             'recruit_list': recruit_list,
+            'store_name': store_name,
             'slug':slug
             })
        

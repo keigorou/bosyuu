@@ -13,6 +13,16 @@ a {
     text-decoration: none;
 }
 
+.header {
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-family: serif;
+    border-bottom: 3px solid #3c6690;
+    // font-family: 'Kaisei Decol', serif;
+    // font-family: 'Shippori Mincho', serif;
+}
+
 input:required {
     background: rgba(255, 192, 203, 0.5);
 }
@@ -21,12 +31,22 @@ input:valid {
     background: transparent;
 }
 
+hr {
+    margin: 0;
+
+}
+
+h4 {
+    margin-top: 20px;
+    text-align: center;
+}
+
 table {
     border-collapse:separate;
     border-spacing: 0;
     width: 400px;
     max-width: 400px;
-    margin: 80px auto;
+    margin: 20px auto 0;
     th {
         text-align: center;
         color:white;
@@ -64,10 +84,7 @@ table {
     position: relative;
     margin: 80px auto;
     max-width: 400px;
-    button {
-        position: absolute;
-        right: 0;
-    }
+
     &_text {
         display: flex;
         margin-bottom: 6px;
@@ -106,4 +123,16 @@ table {
         }
        
         }
+}
+
+.to-detail {
+    display: block;
+    margin: 30px auto 60px ;
+    width: 200px;
+}
+
+.to-apply {
+    display: block;
+    margin: 20px auto ;
+    width: 50%;
 }
