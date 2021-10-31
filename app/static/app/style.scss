@@ -19,8 +19,6 @@ a {
     font-size: 30px;
     font-family: serif;
     border-bottom: 3px solid #3c6690;
-    // font-family: 'Kaisei Decol', serif;
-    // font-family: 'Shippori Mincho', serif;
 }
 
 input:required {
@@ -29,11 +27,6 @@ input:required {
 
 input:valid {
     background: transparent;
-}
-
-hr {
-    margin: 0;
-
 }
 
 h4 {
@@ -133,6 +126,8 @@ table {
 
 .to-apply {
     display: block;
+    height: 50px;
     margin: 20px auto ;
     width: 50%;
+    font-size: 20px;
 }

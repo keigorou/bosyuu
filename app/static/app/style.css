@@ -27,10 +27,6 @@ input:valid {
   background: transparent;
 }
 
-hr {
-  margin: 0;
-}
-
 h4 {
   margin-top: 20px;
   text-align: center;
@@ -135,6 +131,8 @@ table .td_last {
 
 .to-apply {
   display: block;
+  height: 50px;
   margin: 20px auto;
   width: 50%;
+  font-size: 20px;
 }
