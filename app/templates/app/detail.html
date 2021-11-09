@@ -3,8 +3,12 @@
 {% block content %}
 <table>
     <tr>
-        <th class="th_first">時給</th>
-        <td class="td_first">{{ recruit.hourlywage }}円 　 {{ recruit.hourlywage_description }}</td>
+        <th class="th_first">職種</th>
+        <td class="td_first">{{ recruit.recruitment_type }}</td>
+    </tr>
+    <tr>
+        <th>時給</th>
+        <td>{{ recruit.hourlywage }}円 　 {{ recruit.hourlywage_description }}</td>
     </tr>
     <tr>
         <th>勤務時間</th>
@@ -12,9 +16,11 @@
     </tr>
     <tr>
         <th class="th_last">その他</th>
-        <td class="td_last">{{ recruit.description | linebreaksbr　}}</td>
+        <td class="td_last">{{ recruit.description　| linebreaksbr }}</td>
     </tr>
 </table>
+   
+
     <div class="form_container">
         <form method='POST'>
             {% csrf_token %}

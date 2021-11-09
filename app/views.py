@@ -1,22 +1,17 @@
-from django import views
-from django.http import request
-from django.http.response import HttpResponse
-from django.shortcuts import get_list_or_404, redirect, render
-from django.views import generic
-from django.views.generic import ListView, View
-from django.views.generic.base import TemplateView
-from .models import Recruit, StoreList
+from django.shortcuts import redirect, render
+from django.views.generic import View
+from .models import Recruit, StoreList, User
 from .forms import UserForm
-from app import models
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.conf import settings
 
 
 class IndexView(View):
     def get(self, request, *args, **kwags):
         slug = self.kwargs['slug']
         store_name = StoreList.objects.get(slug=slug)
-        recruit_list = Recruit.objects.filter(store__name= store_name)
+        recruit_list = Recruit.objects.filter(store__name= store_name, publish=True)
 
         return render(request, 'app/index.html', {
             'recruit_list': recruit_list,
@@ -50,8 +45,13 @@ class DetailView(View):
             user_gender = '女性'
         else:
             user_gender = '男性'
-            
+
         store = StoreList.objects.get(slug= self.kwargs['slug'])
+
+        user = User.objects.order_by("id").last()
+        user.user_store = store
+        user.save()
+
         store_email = store.email
 
         context = { 
@@ -64,13 +64,13 @@ class DetailView(View):
 
         subject = "応募を受け付けました"
         message = render_to_string('app/mails/mail.txt', context, request)
-        from_email = 'keigorou84@gmail.com'  # 送信者
+        from_email = settings.EMAIL_HOST  # 送信者
         recipient_list = [user_email]  # 宛先リスト
         send_mail(subject, message, from_email, recipient_list)
 
         subject = "新着応募がありました"
         message = render_to_string('app/mails/mail_admin.txt', context, request)
-        from_email = 'keigorou84@gmail.com'  # 送信者
+        from_email = settings.EMAIL_HOST # 送信者
         recipient_list = [store_email]  # 宛先リスト
         send_mail(subject, message, from_email, recipient_list)
 
