@@ -28,7 +28,8 @@ class DetailView(View):
 
         return render(request, 'app/detail.html', {
             'recruit': recruit,
-            'form': form
+            'form': form,
+            'store_name': recruit.store
         })
 
     def post(self, request, *args, **kwags):
@@ -54,12 +55,15 @@ class DetailView(View):
 
         store_email = store.email
 
+        recruit = Recruit.objects.get(pk=self.kwargs['pk'])
+
         context = { 
             'user_name': user_name ,
             'user_age': user_age ,
             'user_gender': user_gender ,
             'user_email': user_email ,
-            'user_tel': user_tel 
+            'user_tel': user_tel ,
+            'recruit': recruit,
             }
 
         subject = "応募を受け付けました"

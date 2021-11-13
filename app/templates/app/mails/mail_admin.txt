@@ -4,3 +4,8 @@
 性別：{{ user_gender }}
 メールアドレス：{{ user_email }}
 電話番号：{{ user_tel }}
+
+応募条件
+店舗：{{ recruit.store }}
+職種：{{ recruit.recruitment_type }}
+時間：{{ recruit.worktime }}

@@ -1,2 +1,8 @@
 ご応募ありがとうございました。
 担当者からの連絡をお待ち下さい。
+
+応募条件
+店舗：{{ recruit.store }}
+職種：{{ recruit.recruitment_type }}
+時給：{{ recruit.hourlywage }}円
+時間：{{ recruit.worktime }}
