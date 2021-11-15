@@ -16,7 +16,7 @@
                 </tr>
                 <tr>
                     <th>給与</th>
-                    <td>{{ recruit.hourlywage }}円 　 {{ recruit.hourlywage_description }}</td>
+                    <td>{{ recruit.hourlywage }} 　 {{ recruit.hourlywage_description }}</td>
                 </tr>
                 <tr>
                     <th>勤務時間</th>
@@ -28,6 +28,9 @@
                 </tr>
             </table>
             <button class="btn btn-outline-info to-detail"  type="button" onclick=location.href="{% url 'detail' slug recruit.pk %}" >応募画面へ</button>
+                {% if not forloop.last %}
+                    <hr>
+                {% endif %}
             {% endfor %}
         {% else %}
             <h4>現在、募集は行っておりません。</h4>
