@@ -14,7 +14,7 @@ class StoreList(models.Model):
 class Recruit(models.Model):
     store = models.ForeignKey(StoreList, on_delete=models.CASCADE)
     recruitment_type = models.CharField(verbose_name='職種', max_length=50, blank=True)
-    hourlywage = models.IntegerField(verbose_name='時給')
+    hourlywage = models.CharField(verbose_name='給与', max_length=50)
     hourlywage_description = models.CharField(verbose_name='時給詳細', max_length=50, blank=True)
     worktime = models.CharField(verbose_name='勤務時間', max_length=50, blank=True)
     worktime_description = models.CharField(verbose_name='勤務時間詳細', max_length=100, blank=True)
