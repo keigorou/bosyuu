@@ -19,6 +19,12 @@ a {
   border-bottom: 3px solid #3c6690;
 }
 
+@media (max-width: 480px) {
+  .header {
+    font-size: 26px;
+  }
+}
+
 input:required {
   background: rgba(255, 192, 203, 0.5);
 }
@@ -32,10 +38,16 @@ h4 {
   text-align: center;
 }
 
+@media (max-width: 480px) {
+  h4 {
+    font-size: 20px;
+  }
+}
+
 table {
   border-collapse: separate;
   border-spacing: 0;
-  width: 400px;
+  width: 90%;
   max-width: 400px;
   margin: 20px auto 0;
 }

@@ -1,5 +1,25 @@
 @charset "utf-8";
 
+$pc: 1024px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -19,6 +39,9 @@ a {
     font-size: 30px;
     font-family: serif;
     border-bottom: 3px solid #3c6690;
+    @include sp {
+        font-size: 26px;
+    };
 }
 
 input:required {
@@ -32,13 +55,16 @@ input:valid {
 h4 {
     margin-top: 20px;
     text-align: center;
+    @include sp {
+        font-size: 20px;
+    }
 }
 
 
 table {
     border-collapse:separate;
     border-spacing: 0;
-    width: 400px;
+    width: 90%;
     max-width: 400px;
     margin: 20px auto 0;
     th {
