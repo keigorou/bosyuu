@@ -69,7 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bosyuusite.wsgi.application'
 
-DEBUG = True
+DEBUG = False
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 

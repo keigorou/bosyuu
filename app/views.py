@@ -29,7 +29,6 @@ class DetailView(View):
         return render(request, 'app/detail.html', {
             'recruit': recruit,
             'form': form,
-            'store_name': recruit.store
         })
 
     def post(self, request, *args, **kwags):
@@ -47,7 +46,7 @@ class DetailView(View):
         else:
             user_gender = '男性'
 
-        store = StoreList.objects.get(slug= self.kwargs['slug'])
+        store = StoreList.objects.get(slug=self.kwargs['slug'])
 
         user = User.objects.order_by("id").last()
         user.user_store = store
