@@ -11,17 +11,17 @@ class IndexView(View):
     def get(self, request, *args, **kwags):
         slug = self.kwargs['slug']
         store_name = StoreList.objects.get(slug=slug)
-        recruit_list = Recruit.objects.filter(store__name= store_name, publish=True)
+        recruit_list = Recruit.objects.filter(store__name=store_name, publish=True)
 
         return render(request, 'app/index.html', {
             'recruit_list': recruit_list,
             'store_name': store_name,
-            'slug':slug
+            'slug': slug
             })
        
        
 class DetailView(View):
-    def get(self, request, *args, **kwags):
+    def get(self, request, *args, **kwargs):
         recruit = Recruit.objects.get(pk=self.kwargs['pk'])
 
         form = UserForm()
