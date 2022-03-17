@@ -6,6 +6,10 @@ body {
   color: #333;
 }
 
+img {
+  width: 100%;
+}
+
 a {
   color: #333;
   text-decoration: none;
